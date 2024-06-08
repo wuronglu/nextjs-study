@@ -1,3 +1,4 @@
+// export const dynamic = 'force-dynamic';
 import { sql } from '@vercel/postgres';
 import {
   CustomerField,
@@ -9,6 +10,7 @@ import {
   Revenue,
 } from './definitions';
 import { formatCurrency } from './utils';
+import { unstable_noStore as noStore } from 'next/cache';
 
 export async function fetchRevenue() {
   // Add noStore() here to prevent the response from being cached.
